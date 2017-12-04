@@ -197,9 +197,11 @@ export default class TabViewPagerPan<T: Route<*>> extends React.Component<
     const offset = -index * this.props.layout.width;
 
     if (this.props.animationEnabled === false) {
-      this.props.panX.setValue(0);
-      this.props.offsetX.setValue(offset);
-      return;
+      setTimeout(() => 
+        this.props.panX.setValue(0);
+        this.props.offsetX.setValue(offset);
+        return;
+      }, 10);
     }
 
     const { timing, ...transitionConfig } = DefaultTransitionSpec;
