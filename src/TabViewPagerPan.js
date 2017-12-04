@@ -258,9 +258,11 @@ export default class TabViewPagerPan<T: Route<*>> extends React.Component<
         }
       });
     } else {
-      this.props.position.setValue(toValue);
-      this.props.jumpToIndex(toValue);
-      this._pendingIndex = null;
+      setTimeout(function() {
+        this.props.position.setValue(toValue);
+        this.props.jumpToIndex(toValue);
+        this._pendingIndex = null;
+      }, 10);
     }
   };
 
